@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain</title>
+</head>
+<body>
+    <h1>Blockchain</h1>
+    {% for block in chain %}
+    <div style="border:1px solid black; margin-bottom:20px; padding:10px;">
+        <p><strong>Index:</strong> {{ block.index }}</p>
+        <p><strong>Timestamp:</strong> {{ block.timestamp }}</p>
+        <p><strong>Transactions:</strong></p>
+        <ul>
+            {% for transaction in block.transactions %}
+            <li>Stock: {{ transaction.stock }}, Price: ${{ transaction.price }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Hash:</strong> {{ block.hash }}</p>
+        <p><strong>Previous Hash:</strong> {{ block.previous_hash }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Stock Transactions</title>
+</head>
+<body>
+    <h1>Enter Stock Transaction</h1>
+    <form action="{{ url_for('add_transaction') }}" method="post">
+        <label for="stock_name">Stock Name:</label>
+        <input type="text" id="stock_name" name="stock_name" required>
+        <br>
+        <label for="stock_price">Stock Price:</label>
+        <input type="text" id="stock_price" name="stock_price" required>
+        <br>
+        <input type="submit" value="Add Transaction">
+    </form>
+
+    <h2><a href="{{ url_for('view_chain') }}">View Blockchain</a></h2>
+</body>
+</html>
